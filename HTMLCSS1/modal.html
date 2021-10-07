@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+.myButton {
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	background-color:#2dabf9;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:32px 76px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	background-color:#0688fa;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* [Object] Modal
+ * =============================== */
+ .modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, .9);
+    transition: opacity .25s ease;
+}
+.modal__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+.modal-state {
+    display: none;
+}
+.modal-state:checked + .modal {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-state:checked + .modal .modal__inner {
+    top: 0;
+}
+.modal__inner {
+    transition: top .25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 1em 2em;
+    height: 30%;
+}
+.modal__close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+.modal__close:after, .modal__close:before {
+    content:'';
+    position: absolute;
+    width: 2px;
+    height: 1.5em;
+    background: #ccc;
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+}
+.modal__close:hover:after, .modal__close:hover:before {
+    background: #aaa;
+}
+.modal__close:before {
+    transform: rotate(-45deg);
+}
+@media screen and (max-width: 768px) {
+    .modal__inner {
+        width: 90%;
+        height: 90%;
+        box-sizing: border-box;
+    }
+}
+/* Other
+ * =============================== */
+ body {
+    padding: 1%;
+    font: 1/1.5em sans-serif;
+    text-align: center;
+}
+.btn {
+    cursor: pointer;
+    background: #27ae60;
+    display: inline-block;
+    padding: .5em 1em;
+    color: #fff;
+    border-radius: 3px;
+}
+.btn:hover, .btn:focus {
+    background: #2ecc71;
+}
+.btn:active {
+    background: #27ae60;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2) inset;
+}
+.btn--blue {
+    background: #2980b9;
+}
+.btn--blue:hover, .btn--blue:focus {
+    background: #3498db;
+}
+.btn--blue:active {
+    background: #2980b9;
+}
+p img {
+    max-width: 200px;
+    height: auto;
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS MODALS</title>
+</head>
+<body>
+
+    
+
+    <h1 style="text-align:center">Modals en CSS</h1>
+
+
+    <label class="myButton" for="modal-1">Modal 1</label>
+<input class="modal-state" id="modal-1" type="checkbox" />
+<div class="modal">
+    <label class="modal__bg" for="modal-1"></label>
+    <div class="modal__inner">
+        <label class="modal__close" for="modal-1"></label>
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+    </div>
+</div>
+
+<label class="myButton" for="modal-2">Modal 2</label>
+<input class="modal-state" id="modal-2" type="checkbox" />
+<div class="modal">
+    <label class="modal__bg" for="modal-2"></label>
+    <div class="modal__inner">
+        <label class="modal__close" for="modal-2"></label>
+        <img id="img01" src="https://as01.epimg.net/betech/imagenes/2018/02/27/portada/1519723458_873061_1519723787_noticia_normal.jpg" style="max-width: 80%">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
+
+    </div>
+</div>
+
+<label class="myButton" for="modal-3">Modal 3</label>
+<input class="modal-state" id="modal-3" type="checkbox" />
+<div class="modal">
+    <label class="modal__bg" for="modal-3"></label>
+    <div class="modal__inner">
+        <label class="modal__close" for="modal-3"></label>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YXdOAUKCc0k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+    
+</body>
+</html>
